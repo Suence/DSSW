@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SRC", "SRC", "{C9498417-FB26-4FEA-BE72-036C80EF337E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSSW.Client", "SRC\DSSW.Client\DSSW.Client.csproj", "{E4971A14-F57D-43AE-B82E-CAEE5B95FF3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4971A14-F57D-43AE-B82E-CAEE5B95FF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4971A14-F57D-43AE-B82E-CAEE5B95FF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4971A14-F57D-43AE-B82E-CAEE5B95FF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4971A14-F57D-43AE-B82E-CAEE5B95FF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4971A14-F57D-43AE-B82E-CAEE5B95FF3D} = {C9498417-FB26-4FEA-BE72-036C80EF337E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {946B99F4-3694-4BAF-A9E4-FEDCFAD20AF2}
+	EndGlobalSection
+EndGlobal
