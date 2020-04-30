@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using DSSW.Client.Properties;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace DSSW.Client.Views
 {
@@ -7,9 +9,9 @@ namespace DSSW.Client.Views
     /// </summary>
     public partial class Monitor : UserControl
     {
-        public Monitor()
-        {
-            InitializeComponent();
-        }
+        public Monitor() => InitializeComponent();
+
+        private void OpenSettingsWindow(object sender, RoutedEventArgs e)
+            => new SettingsWindow().ShowDialog();
     }
 }

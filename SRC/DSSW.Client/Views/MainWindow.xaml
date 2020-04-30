@@ -4,7 +4,6 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:constants="clr-namespace:DSSW.Client.Constants"
-        MouseLeftButtonDown="DragMoveWindow"
         Title="{Binding Title}"
         WindowStyle="None"
         ResizeMode="NoResize"
