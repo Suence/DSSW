@@ -3,8 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
-    <Grid>
+        Title="{Binding Title}"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="350"
+        Width="525">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border Padding="0"
+                    Background="Transparent">
+                <ContentPresenter ClipToBounds="True" />
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+    <Grid >
+        <Border CornerRadius="30, 0, 30, 0" Background="White"/>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
     </Grid>
 </Window>
