@@ -11,13 +11,11 @@ namespace DSSW.Client
     public partial class App
     {
         protected override Window CreateShell()
-        {
-            return Container.Resolve<MainWindow>();
-        }
+            => Container.Resolve<MainWindow>();
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterForNavigation<Monitor>();
         }
     }
 }

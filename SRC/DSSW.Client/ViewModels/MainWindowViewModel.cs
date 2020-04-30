@@ -1,4 +1,6 @@
-﻿using Prism.Mvvm;
+﻿using DSSW.Client.Views;
+using Prism.Mvvm;
+using Prism.Regions;
 
 namespace DSSW.Client.ViewModels
 {
@@ -11,9 +13,9 @@ namespace DSSW.Client.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(IRegionManager regionManager)
         {
-
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(Monitor));
         }
     }
 }

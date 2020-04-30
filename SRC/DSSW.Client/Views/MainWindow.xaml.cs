@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace DSSW.Client.Views
 {
@@ -11,5 +12,8 @@ namespace DSSW.Client.Views
         {
             InitializeComponent();
         }
+
+        private void DragMoveWindow(object sender, MouseButtonEventArgs e)
+            => DragMove();
     }
 }
