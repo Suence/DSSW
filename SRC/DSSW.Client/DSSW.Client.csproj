@@ -58,6 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="Constants\RegionNames.cs" />
     <Compile Include="Constants\ViewNames.cs" />
+    <Compile Include="Converters\PathToBitmapImageConverter.cs" />
     <Compile Include="ViewModels\MonitorViewModel.cs" />
     <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
     <Compile Include="Views\Monitor.xaml.cs">
