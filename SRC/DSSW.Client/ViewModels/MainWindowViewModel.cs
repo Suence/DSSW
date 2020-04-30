@@ -1,4 +1,5 @@
-﻿using DSSW.Client.Views;
+﻿using DSSW.Client.Constants;
+using DSSW.Client.Views;
 using Prism.Mvvm;
 using Prism.Regions;
 
@@ -15,7 +16,7 @@ namespace DSSW.Client.ViewModels
 
         public MainWindowViewModel(IRegionManager regionManager)
         {
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(Monitor));
+            regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(Monitor));
         }
     }
 }
