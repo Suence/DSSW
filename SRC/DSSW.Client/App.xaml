@@ -4,6 +4,6 @@
 	     xmlns:prism="http://prismlibrary.com/"
              xmlns:local="clr-namespace:DSSW.Client">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Styles/Button.xaml"/>
     </Application.Resources>
 </prism:PrismApplication>

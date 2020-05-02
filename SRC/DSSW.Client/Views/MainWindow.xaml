@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         Topmost="True"
         Background="Green"
-        Height="230"
+        Height="235"
         Width="280">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />

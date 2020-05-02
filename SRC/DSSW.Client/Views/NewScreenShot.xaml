@@ -84,11 +84,11 @@
                     </Border>
                     <TextBlock Text="高光时刻!"
                                FontFamily="../Assets/#GasinamuNew"
-                               FontSize="18"
+                               FontSize="17"
                                FontWeight="Bold"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
-                               Foreground="#FF7A6C46" />
+                               Foreground="#FF9C825D" />
 
                     <Button HorizontalAlignment="Right"
                             Content="&#xE700;"
@@ -129,23 +129,30 @@
                         </Rectangle.Triggers>
                     </Rectangle>
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2"
+                      Margin="3">
                     <Button Content="复制到剪贴板"
-                            FontSize="18"
-                            Padding="20, 5"
+                            FontSize="15"
+                            Padding="15, 5"
                             Foreground="#FF958456"
                             FontWeight="Bold"
                             FontFamily="../Assets/#GasinamuNew"
                             Background="#FF0B2C53"
+                            x:Name="copyButton"
+                            BorderBrush="#FF5A4D36"
+                            Style="{StaticResource NormalButtonStyle}"
                             Command="{Binding CopyToClipboardCommand}"
                             HorizontalAlignment="Left" />
-                    <Button Content="取消"
-                            FontSize="18"
-                            Padding="20, 5"
+                    <Button Content="我知道了"
+                            FontSize="15"
+                            Padding="15, 5"
+                            Width="{Binding ElementName=copyButton, Path=ActualWidth}"
+                            Style="{StaticResource NormalButtonStyle}"
                             Foreground="#FF958456"
                             FontWeight="Bold"
                             HorizontalAlignment="Right"
                             FontFamily="../Assets/#GasinamuNew"
+                            BorderBrush="#FF5A4D36"
                             Background="#FF0B2C53"
                             Command="{Binding BackToMonitorCommand}" />
                 </Grid>
