@@ -12,10 +12,11 @@
     <Grid>
         <Ellipse HorizontalAlignment="Right"
                  VerticalAlignment="Top"
-                 Width="50"
-                 Height="50"
-                 Stroke="Orange"
-                 StrokeThickness="2"
-                 Fill="Red"/>
+                 Width="100"
+                 Height="100">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="../Assets/Images/Image1.png" />
+            </Ellipse.Fill>
+        </Ellipse>
     </Grid>
 </UserControl>

@@ -40,7 +40,7 @@ namespace DSSW.Client.ViewModels
             _regionManager = regionManager;
             CopyToClipboardCommand = new DelegateCommand(CopyToClipboard);
             BackToMonitorCommand = new DelegateCommand(BackToMonitor);
-            AutoBackToMonitor();
+            //AutoBackToMonitor();
         }
 
         public async void AutoBackToMonitor()

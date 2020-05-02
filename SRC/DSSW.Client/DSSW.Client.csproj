@@ -129,12 +129,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
-    <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Cursors\basic.cur" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\image1.png" />
+    <Resource Include="Assets\Images\image2.png" />
     <Content Include="Assets\Sounds\new.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

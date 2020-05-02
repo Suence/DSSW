@@ -8,9 +8,10 @@
         Title="{Binding Title}"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Background="{x:Null}"
-        Height="300"
-        Width="400">
+        Topmost="True"
+        Background="Green"
+        Height="230"
+        Width="280">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>

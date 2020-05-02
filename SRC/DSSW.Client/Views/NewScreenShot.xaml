@@ -4,10 +4,12 @@
              xmlns:converters="clr-namespace:DSSW.Client.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d"
              x:Class="DSSW.Client.Views.NewScreenShot"
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="309.304"
+             x:Name="NewScreenShotUserControl"
              d:DesignHeight="238.08">
     <UserControl.Resources>
         <converters:PathToBitmapImageConverter x:Key="PathToBitmapImage" />
@@ -16,7 +18,7 @@
             <DoubleAnimation BeginTime="0:0:1"
                              Storyboard.TargetName="MaskTranslate"
                              Storyboard.TargetProperty="X"
-                             From="-300"
+                             From="-400"
                              To="500"
                              Duration="0:0:2">
                 <DoubleAnimation.EasingFunction>
@@ -28,10 +30,13 @@
             <MediaTimeline Storyboard.TargetName="SoundsMedia"
                            Source="Assets/Sounds/new.wav" />
         </Storyboard>
+        <Storyboard x:Key="OpenView">
+        </Storyboard>
     </UserControl.Resources>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard Storyboard="{StaticResource PlaySoundsStoryboard}" />
+            <BeginStoryboard Storyboard="{StaticResource OpenView}" />
         </EventTrigger>
     </UserControl.Triggers>
     <Grid x:Name="NewScreenShotLayoutRoot"
@@ -47,7 +52,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0"
-                      Height="33">
+                      Height="35">
                     <Border BorderThickness="2">
                         <Border.BorderBrush>
                             <RadialGradientBrush RadiusX=".65"
@@ -77,7 +82,7 @@
                                               Color="Black" />
                         </Border.Effect>
                     </Border>
-                    <TextBlock Text="监视器"
+                    <TextBlock Text="高光时刻!"
                                FontFamily="../Assets/#GasinamuNew"
                                FontSize="18"
                                FontWeight="Bold"
@@ -96,19 +101,23 @@
                             FontFamily="Segoe MDL2 Assets" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <Image Source="{Binding NewScreenShotPath, Converter={StaticResource PathToBitmapImage}, Mode=TwoWay}" />
+                    <Image x:Name="ScreentShotImage" Source="{Binding NewScreenShotPath, Converter={StaticResource PathToBitmapImage}, Mode=TwoWay}"
+                           VerticalAlignment="Top"
+                           Margin="1"/>
                     <Rectangle Fill="White"
-                               Width="100"
+                               VerticalAlignment="Top"
+                               Width="{Binding ElementName=ScreentShotImage, Path=ActualWidth}"
+                               Height="{Binding ElementName=ScreentShotImage, Path=ActualHeight}"
                                RenderTransformOrigin="0.5,0.5">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
                                 <SkewTransform AngleX="-19.538" />
                                 <TranslateTransform x:Name="MaskTranslate" 
-                                                    X="-300" />
+                                                    X="-350" />
                             </TransformGroup>
                         </Rectangle.RenderTransform>
                         <Rectangle.OpacityMask>
-                            <RadialGradientBrush Center="0, 0.5" RadiusX="1.2" RadiusY="1" GradientOrigin="0, .5">
+                            <RadialGradientBrush Center="0, 0.5" RadiusX="1.2" RadiusY="1.2" GradientOrigin="0, .5">
                                 <GradientStop Color="Transparent" Offset="0.5"/>
                                 <GradientStop Color="White" Offset="1"/>
                             </RadialGradientBrush>
