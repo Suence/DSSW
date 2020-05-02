@@ -45,7 +45,7 @@ namespace DSSW.Client.ViewModels
 
         public async void AutoBackToMonitor()
         {
-            await Task.Delay(5000);
+            await Task.Delay(TimeSpan.FromSeconds(10));
             BackToMonitor();
         }
 
