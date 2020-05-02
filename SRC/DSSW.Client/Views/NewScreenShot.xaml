@@ -11,6 +11,19 @@
              d:DesignHeight="238.08">
     <UserControl.Resources>
         <converters:PathToBitmapImageConverter x:Key="PathToBitmapImage" />
+        <Storyboard x:Key="ImageMaskStoryboard"
+                    RepeatBehavior="Forever">
+            <DoubleAnimation BeginTime="0:0:1"
+                             Storyboard.TargetName="MaskTranslate"
+                             Storyboard.TargetProperty="X"
+                             From="-300"
+                             To="500"
+                             Duration="0:0:2">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
     </UserControl.Resources>
     <Grid x:Name="NewScreenShotLayoutRoot"
           Background="#99000000">
@@ -74,6 +87,28 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <Image Source="{Binding NewScreenShotPath, Converter={StaticResource PathToBitmapImage}, Mode=TwoWay}" />
+                    <Rectangle Fill="White"
+                               Width="100"
+                               RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <SkewTransform AngleX="-19.538" />
+                                <TranslateTransform x:Name="MaskTranslate" 
+                                                    X="-300" />
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.OpacityMask>
+                            <RadialGradientBrush Center="0, 0.5" RadiusX="1.2" RadiusY="1" GradientOrigin="0, .5">
+                                <GradientStop Color="Transparent" Offset="0.5"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </RadialGradientBrush>
+                        </Rectangle.OpacityMask>
+                        <Rectangle.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard Storyboard="{StaticResource ImageMaskStoryboard}" />
+                            </EventTrigger>
+                        </Rectangle.Triggers>
+                    </Rectangle>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Button Content="复制到剪贴板"
