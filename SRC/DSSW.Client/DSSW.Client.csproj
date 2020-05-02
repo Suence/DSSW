@@ -130,10 +130,14 @@
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Images\" />
-    <Folder Include="Assets\Sounds\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Cursors\basic.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Sounds\new.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

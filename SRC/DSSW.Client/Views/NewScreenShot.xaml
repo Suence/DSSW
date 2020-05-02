@@ -24,9 +24,19 @@
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
         </Storyboard>
+        <Storyboard x:Key="PlaySoundsStoryboard">
+            <MediaTimeline Storyboard.TargetName="SoundsMedia"
+                           Source="Assets/Sounds/new.wav" />
+        </Storyboard>
     </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource PlaySoundsStoryboard}" />
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid x:Name="NewScreenShotLayoutRoot"
           Background="#99000000">
+        <MediaElement x:Name="SoundsMedia" />
         <Border Margin="1, 0, 1, 1"
                 BorderBrush="#FF292622"
                 BorderThickness="2">
