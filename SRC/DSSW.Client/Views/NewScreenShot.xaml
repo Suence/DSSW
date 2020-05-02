@@ -8,6 +8,10 @@
              mc:Ignorable="d"
              x:Class="DSSW.Client.Views.NewScreenShot"
              prism:ViewModelLocator.AutoWireViewModel="True"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Top"
+             Height="200"
+             Width="300"
              d:DesignWidth="309.304"
              x:Name="NewScreenShotUserControl"
              d:DesignHeight="238.08">
@@ -19,7 +23,7 @@
                              Storyboard.TargetName="MaskTranslate"
                              Storyboard.TargetProperty="X"
                              From="-400"
-                             To="500"
+                             To="400"
                              Duration="0:0:2">
                 <DoubleAnimation.EasingFunction>
                     <CircleEase EasingMode="EaseOut" />
@@ -31,6 +35,35 @@
                            Source="Assets/Sounds/new.wav" />
         </Storyboard>
         <Storyboard x:Key="OpenView">
+            <DoubleAnimation Storyboard.TargetName="NewScreenShotUserControl"
+                             Storyboard.TargetProperty="Height"
+                             To="35"
+                             Duration="0:0:0" />
+            <DoubleAnimation Storyboard.TargetName="NewScreenShotUserControl"
+                             Storyboard.TargetProperty="Width"
+                             From="0"
+                             To="280"
+                             Duration="0:0:.4">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:.4"
+                             Storyboard.TargetName="NewScreenShotUserControl"
+                             Storyboard.TargetProperty="Height"
+                             From="35"
+                             To="235"
+                             Duration="0:0:.4">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:.8" 
+                             Storyboard.TargetName="ScreenShotGrid"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0"
+                             To="1"
+                             Duration="0:0:0" />
         </Storyboard>
     </UserControl.Resources>
     <UserControl.Triggers>
@@ -86,6 +119,7 @@
                                FontFamily="../Assets/#GasinamuNew"
                                FontSize="17"
                                FontWeight="Bold"
+                               TextAlignment="Center"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Foreground="#FF9C825D" />
@@ -100,7 +134,9 @@
                             Click="OpenSettingsWindow"
                             FontFamily="Segoe MDL2 Assets" />
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid x:Name="ScreenShotGrid" 
+                      Opacity="0"
+                      Grid.Row="1">
                     <Image x:Name="ScreentShotImage" Source="{Binding NewScreenShotPath, Converter={StaticResource PathToBitmapImage}, Mode=TwoWay}"
                            VerticalAlignment="Top"
                            Margin="1"/>
@@ -134,12 +170,9 @@
                     <Button Content="复制到剪贴板"
                             FontSize="15"
                             Padding="15, 5"
-                            Foreground="#FF958456"
                             FontWeight="Bold"
                             FontFamily="../Assets/#GasinamuNew"
-                            Background="#FF0B2C53"
                             x:Name="copyButton"
-                            BorderBrush="#FF5A4D36"
                             Style="{StaticResource NormalButtonStyle}"
                             Command="{Binding CopyToClipboardCommand}"
                             HorizontalAlignment="Left" />
@@ -148,12 +181,9 @@
                             Padding="15, 5"
                             Width="{Binding ElementName=copyButton, Path=ActualWidth}"
                             Style="{StaticResource NormalButtonStyle}"
-                            Foreground="#FF958456"
                             FontWeight="Bold"
                             HorizontalAlignment="Right"
                             FontFamily="../Assets/#GasinamuNew"
-                            BorderBrush="#FF5A4D36"
-                            Background="#FF0B2C53"
                             Command="{Binding BackToMonitorCommand}" />
                 </Grid>
             </Grid>
