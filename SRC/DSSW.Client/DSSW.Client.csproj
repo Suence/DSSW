@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>default.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -138,6 +141,8 @@
     <Resource Include="Assets\Cursors\basic.cur" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\icon.png" />
+    <Resource Include="default.ico" />
     <Resource Include="Assets\Images\image1.png" />
     <Resource Include="Assets\Images\image2.png" />
     <Content Include="Assets\Sounds\new.wav">

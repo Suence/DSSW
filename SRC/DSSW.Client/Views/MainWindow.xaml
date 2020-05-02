@@ -8,16 +8,17 @@
         Title="{Binding Title}"
         WindowStyle="None"
         ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="{x:Null}"
         Topmost="True"
-        Background="Green"
-        Height="235"
+        Height="275"
         Width="280">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>
     <Window.Template>
         <ControlTemplate TargetType="Window">
-            <Border Padding="0"
+            <Border Padding="0, 40, 0, 0"
                     Background="Transparent">
                 <ContentPresenter ClipToBounds="True" />
             </Border>

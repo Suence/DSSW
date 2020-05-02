@@ -24,8 +24,9 @@ namespace DSSW.Client.ViewModels
 
         public DelegateCommand CopyToClipboardCommand { get; }
         private void CopyToClipboard()
-            => Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)));
-
+        {
+            App.Current.Dispatcher.BeginInvoke(new Action(() => Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)))));
+        }
         public DelegateCommand BackToMonitorCommand { get; }
 
         public bool KeepAlive => false;

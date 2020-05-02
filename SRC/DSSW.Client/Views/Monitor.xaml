@@ -9,14 +9,49 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="421"
              d:DesignHeight="357">
+    <UserControl.Resources>
+        <Storyboard x:Key="TransformIconStoryboard">
+            <DoubleAnimation Storyboard.TargetName="IconEllipse"
+                             Storyboard.TargetProperty="(Ellipse.Effect).(DropShadowEffect.Opacity)"
+                             From="0.3"
+                             To="1"
+                             RepeatBehavior="Forever"
+                             AutoReverse="True"
+                             Duration="0:0:1" />
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource TransformIconStoryboard}" />
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid>
-        <Ellipse HorizontalAlignment="Right"
+        <Ellipse x:Name="IconEllipse" 
+                 RenderTransformOrigin=".5, .5"
+                 HorizontalAlignment="Right"
                  VerticalAlignment="Top"
-                 Width="100"
-                 Height="100">
+                 Margin="20"
+                 Width="70"
+                 Height="70">
+            <Ellipse.RenderTransform>
+                <RotateTransform Angle="0"/>
+            </Ellipse.RenderTransform>
             <Ellipse.Fill>
-                <ImageBrush ImageSource="../Assets/Images/Image1.png" />
+                <ImageBrush ImageSource="../Assets/Images/icon.png" />
             </Ellipse.Fill>
+            <Ellipse.Effect>
+                <DropShadowEffect x:Name="IconEffect" 
+                                  ShadowDepth="0"
+                                  BlurRadius="30"
+                                  Opacity="1"
+                                  Color="Gold" />
+            </Ellipse.Effect>
+            <Ellipse.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="设置"/>
+                    <MenuItem Header="关闭"/>
+                </ContextMenu>
+            </Ellipse.ContextMenu>
         </Ellipse>
     </Grid>
 </UserControl>
