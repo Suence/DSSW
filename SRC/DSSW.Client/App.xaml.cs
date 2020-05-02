@@ -16,6 +16,7 @@ namespace DSSW.Client
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<Monitor>();
+            containerRegistry.RegisterForNavigation<NewScreenShot>();
         }
     }
 }

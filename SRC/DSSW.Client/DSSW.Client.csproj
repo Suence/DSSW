@@ -59,10 +59,15 @@
     <Compile Include="Constants\RegionNames.cs" />
     <Compile Include="Constants\ViewNames.cs" />
     <Compile Include="Converters\PathToBitmapImageConverter.cs" />
+    <Compile Include="NewScreenShotEvent.cs" />
     <Compile Include="ViewModels\MonitorViewModel.cs" />
+    <Compile Include="ViewModels\NewScreenShotViewModel.cs" />
     <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
     <Compile Include="Views\Monitor.xaml.cs">
       <DependentUpon>Monitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewScreenShot.xaml.cs">
+      <DependentUpon>NewScreenShot.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
@@ -81,6 +86,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Monitor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewScreenShot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,6 +122,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.19</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Unity" Version="7.2.0.1367" />
   </ItemGroup>
   <ItemGroup />

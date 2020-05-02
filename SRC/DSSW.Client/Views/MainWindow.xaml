@@ -4,11 +4,13 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:constants="clr-namespace:DSSW.Client.Constants"
+        MouseLeftButtonDown="DragMoveWindow"
         Title="{Binding Title}"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Height="350"
-        Width="525">
+        Background="{x:Null}"
+        Height="300"
+        Width="400">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>

@@ -1,34 +1,36 @@
-﻿using Prism.Commands;
+﻿using DSSW.Client.Constants;
+using Prism.Events;
 using Prism.Mvvm;
-using System;
+using Prism.Regions;
 using System.IO;
-using System.Windows;
-using System.Windows.Media.Imaging;
 
 namespace DSSW.Client.ViewModels
 {
     public class MonitorViewModel : BindableBase
     {
         #region private
-        private string _newScreenShotPath;
         private FileSystemWatcher _fileSystemWatcher;
+        private readonly IRegionManager _regionManager;
+        private readonly IEventAggregator _eventAggregator;
         #endregion
 
-        public string NewScreenShotPath
+        public MonitorViewModel(IRegionManager regionManager, IEventAggregator eventAggregator)
         {
-            get => _newScreenShotPath;
-            set => SetProperty(ref _newScreenShotPath, value);
+            _regionManager = regionManager;
+            _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<NewScreenShotEvent>()
+                            .Subscribe(NavigateToNewScreenShotView, ThreadOption.UIThread);
+            MonitorTargetFolder(@"C:\Users\Suence\Documents\地下城与勇士\ScreenShot");
         }
 
-        public DelegateCommand CopyToClipboardCommand { get; }
-        private void CopyToClipboard()
-            => Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)));
-
-        public MonitorViewModel()
-        {
-            CopyToClipboardCommand = new DelegateCommand(CopyToClipboard);
-            MonitorTargetFolder(@"D:\TEST");
-        }
+        private void NavigateToNewScreenShotView(string fileFullPath)
+            => _regionManager.RequestNavigate(
+                   RegionNames.MainRegion,
+                   ViewNames.NewScreenShot,
+                   new NavigationParameters
+                   {
+                       { "NewScreenShotFullPath", fileFullPath}
+                   });
 
         private void MonitorTargetFolder(string targetFolderFullPath)
         {
@@ -36,12 +38,8 @@ namespace DSSW.Client.ViewModels
             {
                 IncludeSubdirectories = true
             };
-            _fileSystemWatcher.Created += NewScreenShotCreated;
+            _fileSystemWatcher.Created += (_, e) => _eventAggregator.GetEvent<NewScreenShotEvent>().Publish(e.FullPath);
             _fileSystemWatcher.EnableRaisingEvents = true;
-        }
-        private void NewScreenShotCreated(object sender, FileSystemEventArgs e)
-        {
-            NewScreenShotPath = e.FullPath;
         }
     }
 }

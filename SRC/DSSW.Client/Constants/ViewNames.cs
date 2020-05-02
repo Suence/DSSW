@@ -9,5 +9,6 @@ namespace DSSW.Client.Constants
     public static class ViewNames
     {
         public const string Monitor = nameof(Monitor);
+        public const string NewScreenShot = nameof(NewScreenShot);
     }
 }

@@ -9,55 +9,13 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignWidth="421"
              d:DesignHeight="357">
-    <UserControl.Resources>
-        <converters:PathToBitmapImageConverter x:Key="PathToBitmapImage"/>
-    </UserControl.Resources>
-    <Grid Background="#FF252323">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0"
-              Height="50">
-            <Grid.Background>
-                <RadialGradientBrush RadiusX="1"
-                                     RadiusY="1.2"
-                                     Center=".5, -.1"
-                                     GradientOrigin=".5, -.1">
-                    <GradientStop Offset="0"
-                                  Color="#FF0A69B8" />
-                    <GradientStop Offset="1"
-                                  Color="Black" />
-                </RadialGradientBrush>
-            </Grid.Background>
-            <TextBlock Text="标题"
-                       FontFamily="黑体"
-                       FontSize="25"
-                       Foreground="#FF918C74"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
-            <Button HorizontalAlignment="Right"
-                    Content="&#xE700;"
-                    FontSize="25"
-                    Background="Transparent"
-                    Foreground="#FF918C74"
-                    BorderThickness="0"
-                    Margin="0, 0, 10, 0"
-                    Click="OpenSettingsWindow"
-                    FontFamily="Segoe MDL2 Assets" />
-        </Grid>
-        <Grid Grid.Row="1">
-            <Image Source="{Binding NewScreenShotPath, Converter={StaticResource PathToBitmapImage}}"/>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Button Content="Click"
-                    FontSize="20"
-                    Padding="20, 5"
-                    Foreground="White"
-                    Background="#FF0D2F78"
-                    Command="{Binding CopyToClipboardCommand}"
-                    HorizontalAlignment="Center" />
-        </Grid>
+    <Grid>
+        <Ellipse HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Width="50"
+                 Height="50"
+                 Stroke="Orange"
+                 StrokeThickness="2"
+                 Fill="Red"/>
     </Grid>
 </UserControl>
