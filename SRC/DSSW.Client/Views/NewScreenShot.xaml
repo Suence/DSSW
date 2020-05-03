@@ -87,11 +87,12 @@
         </EventTrigger>
     </UserControl.Triggers>
     <Grid x:Name="NewScreenShotLayoutRoot"
-          Background="#99000000">
+          Background="#CC000000">
         <MediaElement x:Name="SoundsMedia" />
         <Border Margin="1, 0, 1, 1"
                 BorderBrush="#FF292622"
-                BorderThickness="2">
+                BorderThickness="1"
+                CornerRadius="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
