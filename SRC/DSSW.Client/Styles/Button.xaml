@@ -60,4 +60,55 @@
         <Setter Property="Background"
                 Value="#FF0B2E57" />
     </Style>
+
+    <ControlTemplate x:Key="WithoutStyleButtonTemplate"
+                     TargetType="{x:Type Button}">
+        <Border x:Name="border"
+                Background="{TemplateBinding Background}"
+                RenderTransformOrigin="0.5, 1"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+               TextBlock.Foreground="{TemplateBinding Foreground}"
+                CornerRadius="3"
+                ClipToBounds="True">
+            <ContentPresenter x:Name="content"
+                              Focusable="False"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              Margin="{TemplateBinding Padding}"
+                              RecognizesAccessKey="True"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter Property="Foreground"
+                        Value="#FFD1C898" />
+            </Trigger>
+            <Trigger Property="IsPressed"
+                     Value="True">
+                <Setter TargetName="border"
+                        Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.97" />
+                    </Setter.Value>
+                </Setter>
+                <Setter TargetName="content"
+                        Property="RenderTransform">
+                    <Setter.Value>
+                        <TranslateTransform Y="1.2" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="WithoutButtonStyle" 
+           TargetType="{x:Type Button}">
+        <Setter Property="Template"
+                Value="{StaticResource WithoutStyleButtonTemplate}" />
+        <Setter Property="Foreground"
+                Value="#FF84754D" />
+        <Setter Property="Background"
+                Value="Transparent" />
+    </Style>
 </ResourceDictionary>
