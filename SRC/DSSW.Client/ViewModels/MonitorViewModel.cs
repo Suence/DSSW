@@ -1,5 +1,6 @@
 ﻿using DSSW.Client.Constants;
 using DSSW.Client.Events;
+using DSSW.Client.StaticObjects;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -21,7 +22,7 @@ namespace DSSW.Client.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<NewScreenShotEvent>()
                             .Subscribe(NavigateToNewScreenShotView, ThreadOption.UIThread);
-            MonitorTargetFolder(@"C:\Users\Suence\Documents\地下城与勇士\ScreenShot");
+            MonitorTargetFolder(GlobalObjectHolder.ScreenShotFolder);
         }
 
         private void NavigateToNewScreenShotView(string fileFullPath)
