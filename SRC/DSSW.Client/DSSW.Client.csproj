@@ -64,7 +64,8 @@
     <Compile Include="Converters\PathToBitmapImageConverter.cs" />
     <Compile Include="Converters\ReverseBooleanConverter.cs" />
     <Compile Include="Events\NewScreenShotEvent.cs" />
-    <Compile Include="StaticObjects\GlobalObjectHolder.cs" />
+    <Compile Include="Utils\GlobalObjectHolder.cs" />
+    <Compile Include="Utils\WindowPositionHelper.cs" />
     <Compile Include="ViewModels\MonitorViewModel.cs" />
     <Compile Include="ViewModels\NewScreenShotViewModel.cs" />
     <Compile Include="ViewModels\SettingsWindowViewModel.cs" />

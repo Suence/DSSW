@@ -11,6 +11,8 @@
         AllowsTransparency="True"
         Background="{x:Null}"
         Topmost="True"
+        Loaded="SetWindowSize"
+        Closing="SaveWindowSize"
         Height="275"
         Width="280">
     <WindowChrome.WindowChrome>

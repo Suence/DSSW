@@ -1,6 +1,6 @@
 ﻿using DSSW.Client.Constants;
 using DSSW.Client.Events;
-using DSSW.Client.StaticObjects;
+using DSSW.Client.Utils;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
