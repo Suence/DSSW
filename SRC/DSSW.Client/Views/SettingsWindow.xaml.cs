@@ -13,8 +13,9 @@ namespace DSSW.Client.Views
         }
 
         private void DragMoveWindow(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
+            => DragMove();
+
+        private void CloseSettingsWindow(object sender, RoutedEventArgs e)
+            => Close();
     }
 }
