@@ -186,7 +186,7 @@
                 </Grid>
                 <Grid Grid.Row="2"
                       Margin="3">
-                    <Button FontSize="15"
+                    <Button FontSize="16"
                             Padding="0, 5"
                             Width="125"
                             FontWeight="Bold"
@@ -197,7 +197,7 @@
                             Command="{Binding CopyToClipboardCommand}"
                             HorizontalAlignment="Left" />
                     <Button Content="我知道了"
-                            FontSize="15"
+                            FontSize="16"
                             Padding="15, 5"
                             Width="{Binding ElementName=copyButton, Path=ActualWidth}"
                             Style="{StaticResource NormalButtonStyle}"
