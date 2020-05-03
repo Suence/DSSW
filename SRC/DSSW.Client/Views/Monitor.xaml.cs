@@ -13,5 +13,8 @@ namespace DSSW.Client.Views
 
         private void OpenSettingsWindow(object sender, RoutedEventArgs e)
             => new SettingsWindow().ShowDialog();
+
+        private void ExitApplication(object sender, RoutedEventArgs e)
+            => Application.Current.Shutdown();
     }
 }

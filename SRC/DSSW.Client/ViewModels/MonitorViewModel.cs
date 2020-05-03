@@ -6,7 +6,7 @@ using System.IO;
 
 namespace DSSW.Client.ViewModels
 {
-    public class MonitorViewModel : BindableBase
+    public class MonitorViewModel : BindableBase, IRegionMemberLifetime
     {
         #region private
         private FileSystemWatcher _fileSystemWatcher;
@@ -41,5 +41,6 @@ namespace DSSW.Client.ViewModels
             _fileSystemWatcher.Created += (_, e) => _eventAggregator.GetEvent<NewScreenShotEvent>().Publish(e.FullPath);
             _fileSystemWatcher.EnableRaisingEvents = true;
         }
+        public bool KeepAlive => false;
     }
 }

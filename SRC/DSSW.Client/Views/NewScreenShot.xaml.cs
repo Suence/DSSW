@@ -11,10 +11,5 @@ namespace DSSW.Client.Views
         {
             InitializeComponent();
         }
-
-        private void OpenSettingsWindow(object sender, System.Windows.RoutedEventArgs e)
-        {
-            new SettingsWindow().ShowDialog();
-        }
     }
 }

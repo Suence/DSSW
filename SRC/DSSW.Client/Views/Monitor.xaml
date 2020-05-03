@@ -19,6 +19,7 @@
                              AutoReverse="True"
                              Duration="0:0:1" />
         </Storyboard>
+
     </UserControl.Resources>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="Loaded">
@@ -47,9 +48,31 @@
                                   Color="Gold" />
             </Ellipse.Effect>
             <Ellipse.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="设置"/>
-                    <MenuItem Header="关闭"/>
+                <ContextMenu Padding="0" FontSize="18" Margin="0">
+                    <Separator>
+                        <Separator.Template>
+                            <ControlTemplate TargetType="Separator">
+                                <StackPanel Background="Black"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch">
+                                    <TextBlock Text="程序菜单"
+                                               FontSize="18"
+                                               Margin="10, 0, 0, 0"
+                                               Foreground="White" />
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Separator.Template>
+                    </Separator>
+                    <MenuItem Header="设置"
+                              Icon="{x:Null}"
+                              Click="OpenSettingsWindow"
+                              FontWeight="Bold"
+                              Foreground="#FFE0C297" />
+                    <MenuItem Header="关闭"
+                              Icon="{x:Null}"
+                              Click="ExitApplication"
+                              FontWeight="Bold"
+                              Foreground="#FFE0C297" />
                 </ContextMenu>
             </Ellipse.ContextMenu>
         </Ellipse>

@@ -24,12 +24,10 @@ namespace DSSW.Client.ViewModels
 
         public DelegateCommand CopyToClipboardCommand { get; }
         private void CopyToClipboard()
-        {
-            App.Current.Dispatcher.BeginInvoke(new Action(() => Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)))));
-        }
+            => Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)));
+
         public DelegateCommand BackToMonitorCommand { get; }
 
-        public bool KeepAlive => false;
 
         private void BackToMonitor()
             => _regionManager.RequestNavigate(
@@ -62,5 +60,6 @@ namespace DSSW.Client.ViewModels
         {
             NewScreenShotPath = navigationContext.Parameters["NewScreenShotFullPath"].ToString();
         }
+        public bool KeepAlive => false;
     }
 }

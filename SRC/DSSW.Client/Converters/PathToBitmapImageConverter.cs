@@ -14,6 +14,8 @@ namespace DSSW.Client.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value == null) return null;
+
             try
             {
                 var bitmapImage = new BitmapImage();

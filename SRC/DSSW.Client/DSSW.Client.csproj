@@ -79,6 +79,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Styles\ContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,6 +149,7 @@
     <Resource Include="Assets\Cursors\basic.cur" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\settingsbg.jpg" />
     <Resource Include="Assets\Images\icon.png" />
     <Resource Include="default.ico" />
     <Resource Include="Assets\Images\image1.png" />
