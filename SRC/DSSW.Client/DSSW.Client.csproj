@@ -62,7 +62,7 @@
     <Compile Include="Constants\RegionNames.cs" />
     <Compile Include="Constants\ViewNames.cs" />
     <Compile Include="Converters\PathToBitmapImageConverter.cs" />
-    <Compile Include="NewScreenShotEvent.cs" />
+    <Compile Include="Events\NewScreenShotEvent.cs" />
     <Compile Include="ViewModels\MonitorViewModel.cs" />
     <Compile Include="ViewModels\NewScreenShotViewModel.cs" />
     <Compile Include="ViewModels\SettingsWindowViewModel.cs" />

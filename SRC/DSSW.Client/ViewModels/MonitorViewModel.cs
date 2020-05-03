@@ -1,4 +1,5 @@
 ﻿using DSSW.Client.Constants;
+using DSSW.Client.Events;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
