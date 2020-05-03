@@ -22,7 +22,7 @@ namespace DSSW.Client.ViewModels
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<NewScreenShotEvent>()
                             .Subscribe(NavigateToNewScreenShotView, ThreadOption.UIThread);
-            MonitorTargetFolder(GlobalObjectHolder.ScreenShotFolder);
+            MonitorTargetFolder(FileHelper.DnfScreenShotFolder);
         }
 
         private void NavigateToNewScreenShotView(string fileFullPath)

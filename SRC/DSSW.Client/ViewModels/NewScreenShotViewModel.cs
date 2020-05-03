@@ -78,7 +78,6 @@ namespace DSSW.Client.ViewModels
             for (int i = 0; i < 100; ++i)
             {
                 await Task.Delay(TimeSpan.FromSeconds(0.1));
-                System.Diagnostics.Debug.WriteLine("Running");
                 if (_isFocused)
                 {
                     return;
@@ -86,11 +85,10 @@ namespace DSSW.Client.ViewModels
             }
             CanAutoExit = true;
         }
+
         public DelegateCommand ResetTimeCommand { get; }
-        private void ResetTime()
-        {
-            _isFocused = true;
-        }
+        private void ResetTime() => _isFocused = true;
+
         public bool IsNavigationTarget(NavigationContext navigationContext)
             => true;
 

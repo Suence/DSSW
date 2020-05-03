@@ -1,4 +1,5 @@
-﻿using DSSW.Client.Views;
+﻿using DSSW.Client.Utils;
+using DSSW.Client.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using System;
@@ -27,6 +28,7 @@ namespace DSSW.Client
             base.OnStartup(e);
             StreamResourceInfo streamInfo = GetResourceStream(new Uri("Assets/Cursors/basic.cur", UriKind.Relative));
             Mouse.OverrideCursor = new Cursor(streamInfo.Stream);
+            FileHelper.OpenThisAppAtBoot();
         }
     }
 }
