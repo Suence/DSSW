@@ -34,6 +34,20 @@
             <MediaTimeline Storyboard.TargetName="SoundsMedia"
                            Source="Assets/Sounds/new.wav" />
         </Storyboard>
+        <Style x:Key="CopyButtonStyle" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource NormalButtonStyle}">
+            <Setter Property="Content"
+                    Value="复制到剪贴板"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsCopied}"
+                         Value="True">
+                    <Setter Property="Content"
+                        Value="已复制"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <converters:ReverseBooleanConverter x:Key="ReverseBoolean" />
         <Storyboard x:Key="OpenView">
             <DoubleAnimation Storyboard.TargetName="NewScreenShotUserControl"
                              Storyboard.TargetProperty="Height"
@@ -58,27 +72,45 @@
                     <CircleEase EasingMode="EaseOut" />
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <DoubleAnimation BeginTime="0:0:.8" 
+            <DoubleAnimation BeginTime="0:0:.7" 
                              Storyboard.TargetName="ScreenShotGrid"
                              Storyboard.TargetProperty="Opacity"
                              From="0"
                              To="1"
                              Duration="0:0:0" />
         </Storyboard>
-        <Style x:Key="CopyButtonStyle" 
-           TargetType="{x:Type Button}"
-           BasedOn="{StaticResource NormalButtonStyle}">
-            <Setter Property="Content"
-                    Value="复制到剪贴板"/>
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding IsCopied}"
-                         Value="True">
-                    <Setter Property="Content"
-                        Value="已复制"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        <converters:ReverseBooleanConverter x:Key="ReverseBoolean" />
+        <Storyboard x:Key="CloseView">
+            <DoubleAnimation Storyboard.TargetName="ScreenShotGrid"
+                             Storyboard.TargetProperty="Opacity"
+                             To="0"
+                             Duration="0:0:0" />
+            <DoubleAnimation Storyboard.TargetName="NewScreenShotUserControl"
+                             Storyboard.TargetProperty="Height"
+                             To="35"
+                             Duration="0:0:.4">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:.4"
+                             Storyboard.TargetName="NewScreenShotUserControl"
+                             Storyboard.TargetProperty="Width"
+                             To="35"
+                             Duration="0:0:.4">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation BeginTime="0:0:.4"
+                             Storyboard.TargetName="NewScreenShotUserControl"
+                             Storyboard.TargetProperty="Opacity"
+                             To="0"
+                             Duration="0:0:.4">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
     </UserControl.Resources>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="Loaded">
@@ -86,6 +118,11 @@
             <BeginStoryboard Storyboard="{StaticResource OpenView}" />
         </EventTrigger>
     </UserControl.Triggers>
+    <i:Interaction.Triggers>
+        <i:StoryboardCompletedTrigger Storyboard="{StaticResource CloseView}">
+            <i:InvokeCommandAction Command="{Binding  BackToMonitorCommand}"/>
+        </i:StoryboardCompletedTrigger>
+    </i:Interaction.Triggers>
     <Grid x:Name="NewScreenShotLayoutRoot"
           Background="#CC000000">
         <MediaElement x:Name="SoundsMedia" />
@@ -142,7 +179,6 @@
                             Style="{StaticResource WithoutButtonStyle}"
                             BorderThickness="0"
                             Padding="0"
-                            Command="{Binding BackToMonitorCommand}"
                             Margin="0, 0, 5, 0">
                         <Viewbox Width="24"
                                  Height="24">
@@ -152,6 +188,11 @@
                                       Data="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
                             </Canvas>
                         </Viewbox>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:ControlStoryboardAction Storyboard="{StaticResource CloseView}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
                 </Grid>
                 <Grid x:Name="ScreenShotGrid" 
@@ -204,8 +245,13 @@
                             Style="{StaticResource NormalButtonStyle}"
                             FontWeight="Bold"
                             HorizontalAlignment="Right"
-                            FontFamily="../Assets/#GasinamuNew"
-                            Command="{Binding BackToMonitorCommand}" />
+                            FontFamily="../Assets/#GasinamuNew">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:ControlStoryboardAction Storyboard="{StaticResource CloseView}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
                 </Grid>
             </Grid>
         </Border>
