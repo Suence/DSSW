@@ -119,9 +119,19 @@
         </EventTrigger>
     </UserControl.Triggers>
     <i:Interaction.Triggers>
+        <i:DataTrigger Binding="{Binding CanAutoExit}"
+                       Value="True">
+            <i:ControlStoryboardAction Storyboard="{StaticResource CloseView}" />
+        </i:DataTrigger>
         <i:StoryboardCompletedTrigger Storyboard="{StaticResource CloseView}">
             <i:InvokeCommandAction Command="{Binding  BackToMonitorCommand}"/>
         </i:StoryboardCompletedTrigger>
+        <i:EventTrigger EventName="MouseEnter">
+            <i:InvokeCommandAction Command="{Binding ResetTimeCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseLeave">
+            <i:InvokeCommandAction Command="{Binding StartTimeCommand}"/>
+        </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid x:Name="NewScreenShotLayoutRoot"
           Background="#CC000000">
