@@ -35,7 +35,7 @@ namespace DSSW.Client.ViewModels
 
         private void MonitorTargetFolder(string targetFolderFullPath)
         {
-            _fileSystemWatcher = new FileSystemWatcher(targetFolderFullPath)
+            _fileSystemWatcher = new FileSystemWatcher(targetFolderFullPath, "*.JPG")
             {
                 IncludeSubdirectories = true
             };
