@@ -14,7 +14,14 @@ namespace DSSW.Client.ViewModels
         #region private
         private string _newScreenShotPath;
         private readonly IRegionManager _regionManager;
+        private bool _isCopied;
         #endregion
+
+        public bool IsCopied
+        {
+            get => _isCopied;
+            set => SetProperty(ref _isCopied, value);
+        }
 
         public string NewScreenShotPath
         {
@@ -24,7 +31,10 @@ namespace DSSW.Client.ViewModels
 
         public DelegateCommand CopyToClipboardCommand { get; }
         private void CopyToClipboard()
-            => Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)));
+        {
+            IsCopied = true;
+            Clipboard.SetImage(new BitmapImage(new Uri(NewScreenShotPath)));
+        }
 
         public DelegateCommand BackToMonitorCommand { get; }
 

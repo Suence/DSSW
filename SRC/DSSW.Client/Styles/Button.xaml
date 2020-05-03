@@ -45,18 +45,6 @@
                     </Setter.Value>
                 </Setter>
             </Trigger>
-            <Trigger Property="IsEnabled"
-                     Value="False">
-                <Setter TargetName="border"
-                        Property="Background"
-                        Value="#FF212121" />
-                <Setter TargetName="border"
-                        Property="BorderBrush"
-                        Value="#FF343434" />
-                <Setter TargetName="border"
-                        Property="TextBlock.Foreground"
-                        Value="#FF676767" />
-            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     <Style x:Key="NormalButtonStyle" 
@@ -71,7 +59,20 @@
                 Value="#FF9C825D" />
         <Setter Property="Background"
                 Value="#FF0B2E57" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled"
+                     Value="False">
+                <Setter Property="Background"
+                        Value="#FF252525" />
+                <Setter Property="BorderBrush"
+                        Value="#FF343434" />
+                <Setter Property="Foreground"
+                        Value="#FF676767" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
+
+
 
     <ControlTemplate x:Key="WithoutStyleButtonTemplate"
                      TargetType="{x:Type Button}">

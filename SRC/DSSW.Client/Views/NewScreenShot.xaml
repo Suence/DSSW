@@ -65,6 +65,20 @@
                              To="1"
                              Duration="0:0:0" />
         </Storyboard>
+        <Style x:Key="CopyButtonStyle" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource NormalButtonStyle}">
+            <Setter Property="Content"
+                    Value="复制到剪贴板"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsCopied}"
+                         Value="True">
+                    <Setter Property="Content"
+                        Value="已复制"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <converters:ReverseBooleanConverter x:Key="ReverseBoolean" />
     </UserControl.Resources>
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="Loaded">
@@ -172,13 +186,14 @@
                 </Grid>
                 <Grid Grid.Row="2"
                       Margin="3">
-                    <Button Content="复制到剪贴板"
-                            FontSize="15"
-                            Padding="15, 5"
+                    <Button FontSize="15"
+                            Padding="0, 5"
+                            Width="125"
                             FontWeight="Bold"
                             FontFamily="../Assets/#GasinamuNew"
                             x:Name="copyButton"
-                            Style="{StaticResource NormalButtonStyle}"
+                            IsEnabled="{Binding IsCopied, Converter={StaticResource ReverseBoolean}}"
+                            Style="{StaticResource CopyButtonStyle}"
                             Command="{Binding CopyToClipboardCommand}"
                             HorizontalAlignment="Left" />
                     <Button Content="我知道了"
