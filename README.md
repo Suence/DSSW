@@ -12,11 +12,14 @@
 
 比如这样的：
 ![preview](README/Images/picture_4.jpg)
+
 这样的:
+
 ![preview](README/Images/picture_3.jpg)
 ![preview](README/Images/picture_1.jpg)
 
 还有这样的:
+
 ![preview](README/Images/picture_8.png)
 
 让我这样看, 你很爽吗?
