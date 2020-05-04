@@ -155,12 +155,6 @@
                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=NavigateUri.AbsoluteUri}">
                                     COLG 论坛
                                     </Hyperlink>
-                                <TextBlock Text="或" />
-                                <Hyperlink NavigateUri="{Binding TiebaAddress}"
-                                           Command="{Binding GoToBroswerCommand}"
-                                           CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=NavigateUri.AbsoluteUri}">
-                                    百度贴吧
-                                </Hyperlink>
                                 <TextBlock Text="参与讨论！"/>
                             </TextBlock>
                         </StackPanel>
