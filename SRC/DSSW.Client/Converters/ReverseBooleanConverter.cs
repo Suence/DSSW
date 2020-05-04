@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace DSSW.Client.Converters
 {
+    /// <summary>
+    /// 用于反转布尔值的值转换器
+    /// </summary>
     [ValueConversion(typeof(bool), typeof(bool))]
     public class ReverseBooleanConverter : IValueConverter
     {

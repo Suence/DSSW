@@ -83,6 +83,9 @@ B站视频演示:
 
 源代码位置：https://github.com/Suence/DSSW
 
+现在已经为源代码添加了注释, 方便阅读~
+![image.png](README/Images/source.png)
+
 ---
 ## 下载与安装
 1：以免一些朋友从不明网站(或QQ群等方式)下载的程序可能存在木马病毒。
@@ -95,6 +98,14 @@ B站视频演示:
 
 2: 从 Github 克隆本程序的全部源代码, 使用 VS (Visual Studio 2017及以上版本) 手动编译。
 
+## 硬盘与内存开销
+内存:
+
+![image.png](README/Images/mem.png)
+
+硬盘:
+
+![image.png](README/Images/disk.png)
 ## 关于版本更新
 
 通过第一种下载方式获取的程序， 可自动检测更新， 无需重新下载和安装。

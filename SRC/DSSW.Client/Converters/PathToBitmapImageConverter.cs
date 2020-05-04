@@ -9,6 +9,9 @@ using System.Windows.Media.Imaging;
 
 namespace DSSW.Client.Converters
 {
+    /// <summary>
+    /// 用于将路径转为 BitmapImage 用于图片显示(不占用文件资源)
+    /// </summary>
     [ValueConversion(typeof(string), typeof(BitmapImage))]
     public class PathToBitmapImageConverter : IValueConverter
     {
