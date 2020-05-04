@@ -89,7 +89,7 @@ B站视频演示:
 因此我在阿里云买了一台服务器及域名，用于托管此程序。
 现在可前往此程序对应的网站直接下载程序。
 
-唯一网站: [suence.net](suence.net)
+唯一网站: [suence.net](http://www.suence.net)
 
 ![image.png](README/Images/website.png)
 
