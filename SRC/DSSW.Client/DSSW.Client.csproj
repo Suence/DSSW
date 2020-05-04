@@ -26,9 +26,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://39.106.42.103/DSSW/</InstallUrl>
-    <UpdateUrl>http://39.106.42.103/DSSW/</UpdateUrl>
-    <SupportUrl>http://39.106.42.103/DSSW/publish.htm</SupportUrl>
+    <InstallUrl>http://www.suence.net/Publish/</InstallUrl>
+    <SupportUrl>http://www.suence.net</SupportUrl>
     <TargetCulture>zh-Hans</TargetCulture>
     <ProductName>DSSW</ProductName>
     <PublisherName>Suence</PublisherName>
@@ -36,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

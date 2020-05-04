@@ -66,16 +66,11 @@ namespace DSSW.Client.ViewModels
             Start();
         }
 
-        public async void AutoBackToMonitor()
-        {
-            await Task.Delay(TimeSpan.FromSeconds(10));
-            BackToMonitor();
-        }
         public DelegateCommand StartTimeCommand { get; }
         private async void Start()
         {
             _isFocused = false;
-            for (int i = 0; i < 100; ++i)
+            for (int i = 0; i < 70; ++i)
             {
                 await Task.Delay(TimeSpan.FromSeconds(0.1));
                 if (_isFocused)

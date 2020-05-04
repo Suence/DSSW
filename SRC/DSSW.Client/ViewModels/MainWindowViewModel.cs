@@ -7,7 +7,7 @@ namespace DSSW.Client.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
+        private string _title = "DSSW";
         public string Title
         {
             get { return _title; }
