@@ -46,7 +46,12 @@
 
 ## 演示
 如图：当你深渊出货的时候, 这个程序提供一个截图分享的功能, 点击[复制到剪贴板]按钮后, 在需要的地方(QQ/微信等) Ctrl+v(右键粘贴) 即可。
+
+gif 图演示:
 ![preview](README/Images/Preview.gif)
+
+B站视频演示:
+[https://www.bilibili.com/video/BV1h541147Lt](https://www.bilibili.com/video/BV1h541147Lt)
 
 7秒无操作后， 分享窗口会自动关闭，或者手动关闭。
 
@@ -97,5 +102,6 @@
 这是程序签名和证书的原因。
 
 点击 [详细信息]-> [仍要运行] 以继续安装。 
+
 ![image.png](README/Images/step1.png)
 ![image.png](README/Images/step2.png)
