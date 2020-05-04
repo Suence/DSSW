@@ -89,7 +89,8 @@ B站视频演示:
 因此我在阿里云买了一台服务器及域名，用于托管此程序。
 现在可前往此程序对应的网站直接下载程序。
 
-唯一网站: suence.net
+唯一网站: [suence.net](suence.net)
+
 ![image.png](README/Images/website.png)
 
 2: 从 Github 克隆本程序的全部源代码, 使用 VS (Visual Studio 2017及以上版本) 手动编译。
