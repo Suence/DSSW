@@ -142,9 +142,7 @@ namespace DSSW.Client.ViewModels
         /// </summary>
         /// <param name="navigationContext"></param>
         public void OnNavigatedTo(NavigationContext navigationContext)
-        {
-            NewScreenShotPath = navigationContext.Parameters["NewScreenShotFullPath"].ToString();
-        }
+            => NewScreenShotPath = navigationContext.Parameters["NewScreenShotFullPath"].ToString();
 
         /// <summary>
         /// 导航离开时, 销毁此视图

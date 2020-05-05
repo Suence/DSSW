@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DSSW.Client.Constants
+﻿namespace DSSW.Client.Constants
 {
     /// <summary>
     /// Region 名称的常量化表示
