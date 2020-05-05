@@ -77,7 +77,7 @@
 
 第一步: 深渊出货的瞬间以迅雷不及掩耳之势按下上面快捷键的一种, 对史诗截图(迅雷别忘了给我打广告费)
 
-![preview](README/Images/mid_2.png)
+![preview](README/Images/ad.png)
 
 第二步：分享
 
