@@ -202,11 +202,9 @@
     <Resource Include="Assets\Cursors\basic.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\settingsbg.jpg" />
     <Resource Include="Assets\Images\icon.png" />
     <Resource Include="default.ico" />
-    <Resource Include="Assets\Images\image1.png" />
-    <Resource Include="Assets\Images\image2.png" />
+    <Resource Include="Assets\Images\settingsbg.jpg" />
     <Content Include="Assets\Sounds\new.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
