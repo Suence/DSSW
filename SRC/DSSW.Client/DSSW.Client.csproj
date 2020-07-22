@@ -26,8 +26,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.suence.net/Publish/</InstallUrl>
-    <SupportUrl>http://www.suence.net</SupportUrl>
+    <InstallUrl>http://www.suence.net/dssw/Publish/</InstallUrl>
+    <SupportUrl>https://bbs.colg.cn/thread-7855396-1-1.html</SupportUrl>
+    <ErrorReportUrl>https://bbs.colg.cn/thread-7855396-1-1.html</ErrorReportUrl>
     <TargetCulture>zh-Hans</TargetCulture>
     <ProductName>DSSW</ProductName>
     <PublisherName>Suence</PublisherName>
@@ -35,8 +36,8 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>9</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
